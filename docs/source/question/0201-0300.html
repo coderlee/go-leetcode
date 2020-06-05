@@ -285,7 +285,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.14" data-path="same.html">
+        <li class="chapter " data-level="1.2.14" data-path="offer.html">
+            
+                <a href="offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="same.html">
             
                 <a href="same.html">
             
@@ -308,7 +321,7 @@
                 <span>
             
                     
-                    分类
+                    分类/书籍
             
                 </span>
             
@@ -356,31 +369,12 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="1.3.4" data-path="../classification/offer.html">
             
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
+                <a href="../classification/offer.html">
             
                     
-                    书籍
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../offer.html">
-            
-                <a href="../offer.html">
-            
-                    
-                    剑指offer
+                    书籍-剑指offer
             
                 </a>
             
@@ -393,7 +387,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" >
+        <li class="chapter " data-level="1.4" >
             
                 <span>
             
@@ -407,7 +401,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../algorithm/sort.html">
+        <li class="chapter " data-level="1.4.1" data-path="../algorithm/sort.html">
             
                 <a href="../algorithm/sort.html">
             
@@ -420,7 +414,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../algorithm/search.html">
+        <li class="chapter " data-level="1.4.2" data-path="../algorithm/search.html">
             
                 <a href="../algorithm/search.html">
             
@@ -490,7 +484,7 @@
 <li><a href="#203&#x79FB;&#x9664;&#x94FE;&#x8868;&#x5143;&#x7D20;2">203.&#x79FB;&#x9664;&#x94FE;&#x8868;&#x5143;&#x7D20;(2)</a></li>
 <li><a href="#204&#x8BA1;&#x6570;&#x8D28;&#x6570;2">204.&#x8BA1;&#x6570;&#x8D28;&#x6570;(2)</a></li>
 <li><a href="#205&#x540C;&#x6784;&#x5B57;&#x7B26;&#x4E32;3">205.&#x540C;&#x6784;&#x5B57;&#x7B26;&#x4E32;(3)</a></li>
-<li><a href="#206&#x53CD;&#x8F6C;&#x94FE;&#x8868;2">206.&#x53CD;&#x8F6C;&#x94FE;&#x8868;(2)</a></li>
+<li><a href="#206&#x53CD;&#x8F6C;&#x94FE;&#x8868;4">206.&#x53CD;&#x8F6C;&#x94FE;&#x8868;(4)</a></li>
 <li><a href="#217&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20;2">217.&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20;(2)</a></li>
 <li><a href="#219&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20;-ii2">219.&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20; II(2)</a></li>
 <li><a href="#225&#x7528;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#x6808;4">225.&#x7528;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#x6808;(4)</a></li>
@@ -852,7 +846,7 @@
     <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
 }
 </code></pre>
-<h2 id="206&#x53CD;&#x8F6C;&#x94FE;&#x8868;2">206.&#x53CD;&#x8F6C;&#x94FE;&#x8868;(2)</h2>
+<h2 id="206&#x53CD;&#x8F6C;&#x94FE;&#x8868;4">206.&#x53CD;&#x8F6C;&#x94FE;&#x8868;(4)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
 </ul>
@@ -887,6 +881,18 @@
 <td>O(n)</td>
 <td>O(1)</td>
 </tr>
+<tr>
+<td>03</td>
+<td>&#x6570;&#x7EC4;&#x8F85;&#x52A9;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>04</td>
+<td>&#x8FED;&#x4EE3;-&#x65B0;&#x5EFA;&#x8282;&#x70B9;</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
 </tbody>
 </table>
 <pre><code class="lang-go"><span class="hljs-keyword">func</span> reverseList(head *ListNode) *ListNode {
@@ -911,6 +917,36 @@
         head = temp
     }
     <span class="hljs-keyword">return</span> result
+}
+
+#
+<span class="hljs-keyword">func</span> reverseList(head *ListNode) *ListNode {
+    result := &amp;ListNode{}
+    arr := <span class="hljs-built_in">make</span>([]*ListNode, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> head != <span class="hljs-literal">nil</span> {
+        arr = <span class="hljs-built_in">append</span>(arr, head)
+        head = head.Next
+    }
+    temp := result
+    <span class="hljs-keyword">for</span> i := <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i-- {
+        arr[i].Next = <span class="hljs-literal">nil</span>
+        temp.Next = arr[i]
+        temp = temp.Next
+    }
+    <span class="hljs-keyword">return</span> result.Next
+}
+
+#
+<span class="hljs-keyword">func</span> reverseList(head *ListNode) *ListNode {
+    <span class="hljs-keyword">var</span> res *ListNode
+    <span class="hljs-keyword">for</span> {
+        <span class="hljs-keyword">if</span> head == <span class="hljs-literal">nil</span> {
+            <span class="hljs-keyword">break</span>
+        }
+        res = &amp;ListNode{head.Val, res}
+        head = head.Next
+    }
+    <span class="hljs-keyword">return</span> res
 }
 </code></pre>
 <h2 id="217&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20;2">217.&#x5B58;&#x5728;&#x91CD;&#x590D;&#x5143;&#x7D20;(2)</h2>
@@ -2281,7 +2317,7 @@ queue.empty(); // &#x8FD4;&#x56DE; false
 <tr>
 <td>02</td>
 <td>&#x6392;&#x5E8F;&#x904D;&#x5386;</td>
-<td>)</td>
+<td>O(nlog(n))</td>
 <td>O(1)</td>
 </tr>
 <tr>
@@ -2811,7 +2847,7 @@ queue.empty(); // &#x8FD4;&#x56DE; false
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0201-0300","level":"1.2.3","depth":2,"next":{"title":"0301-0400","level":"1.2.4","depth":2,"path":"docs/source/question/0301-0400.md","ref":"docs/source/question/0301-0400.md","articles":[]},"previous":{"title":"0100-0200","level":"1.2.2","depth":2,"path":"docs/source/question/0101-0200.md","ref":"docs/source/question/0101-0200.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0201-0300.md","mtime":"2020-05-20T18:49:52.396Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-20T19:19:17.270Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0201-0300","level":"1.2.3","depth":2,"next":{"title":"0301-0400","level":"1.2.4","depth":2,"path":"docs/source/question/0301-0400.md","ref":"docs/source/question/0301-0400.md","articles":[]},"previous":{"title":"0100-0200","level":"1.2.2","depth":2,"path":"docs/source/question/0101-0200.md","ref":"docs/source/question/0101-0200.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0201-0300.md","mtime":"2020-06-04T23:25:15.274Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-04T23:05:18.154Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
